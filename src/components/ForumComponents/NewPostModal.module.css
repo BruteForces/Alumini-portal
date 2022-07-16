@@ -27,6 +27,7 @@
   align-items: center;
   background-color: #fff;
   padding: 1rem 2rem;
+  z-index: 2;
 }
 .header .userinfo_container {
   display: flex;
@@ -76,7 +77,6 @@ form {
 }
 .description_container {
   width: 100%;
-  height: 100%;
   border-radius: 0.5rem;
   background-color: #ddd;
 }
@@ -91,7 +91,7 @@ form {
   border-bottom: 1px solid rgb(167, 167, 167);
 }
 .description_container .input_container textarea[id="description"] {
-  min-height: 10rem;
+  min-height: 13rem;
   min-width: 100%;
   max-width: 100%;
   resize: none;
@@ -115,6 +115,7 @@ textarea[id="description"]::-webkit-scrollbar-thumb:hover {
 }
 
 form .img_input_container {
+  position: relative;
   display: grid;
   place-items: center;
   text-align: center;
@@ -125,16 +126,30 @@ form .img_input_container {
   background-color: #ddd;
   color: #555;
   padding: 1rem;
+  z-index: 0;
 }
 form .img_input_container input[type="file"] {
   display: none;
 }
 
-form .img_input_container img {
+form .img_input_container img[alt="upload-image"] {
+  object-fit: contain;
   width: 100%;
   height: 100%;
-  object-fit: contain;
   overflow: hidden;
+}
+
+form .img_input_container img[alt="image-switch-icon"] {
+  position: absolute;
+  z-index: 1;
+  width: 17%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.image_blur {
+  filter: grayscale(1) blur(5px);
 }
 
 .post_btn {

@@ -13,7 +13,7 @@ const AdminTableHeader = ({ onSelect }) => {
   return (
     <>
       <p className={Styles.table_header}>Alumni Details</p>
-      <Divider mb={".6em"} mt={0} />
+      <Divider mb={".6em"} mt={0} bgColor={"#ADADAD"} />
       <div className={Styles.table_controls}>
         <div className={Styles.search}>
           <FiSearch />
@@ -29,7 +29,7 @@ const AdminTableHeader = ({ onSelect }) => {
           </button>
         </div>
       </div>
-      <Divider mt={".6em"} mb={".6em"} />
+      <Divider mt={".6em"} mb={".6em"} bgColor={"#ADADAD"} />
       <div className={Styles.table_info_handler}>
         <p className={Styles.no_of_results}>Showing 1-10 of 1000 results</p>
         <div className={Styles.results_count_changer}>

@@ -5,11 +5,11 @@ import { BsChat } from "react-icons/bs";
 import CommentModal from "./CommentModal";
 import PostModal from "./PostModal";
 
-const ForumCard = ({ data }) => {
+const ForumCard = ({ data, setProfileActive, profileActive }) => {
   const [isCommentsModalOpen, setIsCommentsModalOpen] = useState(false);
   const [isPostModalOpen, setIsPostModalOpen] = useState(false);
   return (
-    <div className={styles.post_container}>
+    <div className={`${styles.post_container} `}>
       <CommentModal
         comments={data.comments}
         handleClose={() => {
@@ -22,10 +22,11 @@ const ForumCard = ({ data }) => {
         handleClose={() => {
           setIsPostModalOpen(false);
         }}
+        setProfileActive={setProfileActive}
       />
-      <div className={styles.header}>
+      <div className={`${styles.header} ${profileActive && styles.shadow}`}>
         <div className={styles.userinfo_container}>
-          <img src={data.user.profile_image} />
+          <img src={data.user.profile_image} onClick={setProfileActive} />
           <p className={styles.user_name}>{data.user.name}</p>
         </div>
         <div className={styles.post_action_container}>
@@ -41,7 +42,7 @@ const ForumCard = ({ data }) => {
         </div>
       </div>
       <div className={styles.post_image_container}>
-        <img src={data.post.images[0]} />
+        <img src={data.post.images[0]} className={`${profileActive && styles.shadow}`} />
         <div className={styles.post_overlay}></div>
         <div className={styles.post_caption_container}>
           <p>{data.post.caption.title}</p>

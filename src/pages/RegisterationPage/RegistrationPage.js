@@ -29,10 +29,10 @@ function RegistrationPage() {
     password: "",
     confirmPassword: "",
     cname: "",
-    cemail: "",
-    clgname: "",
+    companyMail: "",
+    secondaryCollegeName: "",
     clgemail: "",
-    desgination: "",
+    designation: "",
     organization: "",
     city: "",
     state: "",
@@ -262,7 +262,7 @@ function RegistrationPage() {
                         type="text"
                         id="cemail"
                         placeholder="Company Email ID"
-                        value={data.cemail}
+                        value={data.companyMail}
                         onChange={handleChange}
                       />
                     </div>
@@ -276,7 +276,7 @@ function RegistrationPage() {
                         type="text"
                         id="clgname"
                         placeholder="College Name"
-                        value={data.clgname}
+                        value={data.secondaryCollegeName}
                         onChange={handleChange}
                       />
                       <input

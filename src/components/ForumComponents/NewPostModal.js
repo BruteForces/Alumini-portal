@@ -8,6 +8,7 @@ import { GiPin } from "react-icons/gi";
 
 
 function NewPostModal({ data, setNewPostActive }) {
+  const [imageSwitch, setImageSwitch] = useState(false);
   const [postData, setPostData] = useState({
     cname: '',
     designation: '',
@@ -19,7 +20,7 @@ function NewPostModal({ data, setNewPostActive }) {
     if (!e.target.files || e.target.files.length === 0) {
       setPostData({
         ...postData,
-        image: undefined
+        image: postData.image || undefined
       });
       return;
     }
@@ -37,6 +38,13 @@ function NewPostModal({ data, setNewPostActive }) {
     }
   }, [setNewPostActive]);
 
+  const handleMouseEnter = () => {
+    setImageSwitch(true)
+  }
+
+  const handleMouseLeave = () => {
+    setImageSwitch(false)
+  }
   const handleChange = (e) => {
     setPostData({
       ...postData,
@@ -47,6 +55,8 @@ function NewPostModal({ data, setNewPostActive }) {
     e.preventDefault();
     console.log('postData', postData);
   }
+
+
 
 
   return (
@@ -89,9 +99,19 @@ function NewPostModal({ data, setNewPostActive }) {
               </div>
 
               <div className={styles.img_input_container}>
+
+                {postData.image && imageSwitch && (
+                  <label for="img-switch" >
+                    <img src={require('assets/image-switch.png')} alt="image-switch-icon" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+                  </label>
+                )
+                }
+                <input name="image" id="img-switch" type="file" onChange={onSelectFile} />
+
                 {postData.image ? (
-                  <img src={URL.createObjectURL(postData.image)} />
+                  <img className={`${imageSwitch && styles.image_blur}`} src={URL.createObjectURL(postData.image)} alt="upload-image" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
                 ) : (
+
                   <div className={styles.img_input}>
                     <label for="img-input">
                       <BiImageAdd size="50px" />

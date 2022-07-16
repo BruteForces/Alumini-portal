@@ -13,14 +13,6 @@ const AdminTable = () => {
   const totalPages = Math.ceil(data.length / entriesPerPage);
   const tableHeadRef = useRef(null);
 
-  /*
-  entriesPerPage:30
-  currentPage:1
-  totalPages: 100 / 30 = 3.33
-
-
-   */
-
   const props = useSpring({
     from: {
       backgroundColor: "#e2e2e28e",

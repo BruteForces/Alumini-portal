@@ -18,9 +18,10 @@ tbody tr:hover {
 }
 
 thead {
-  backdrop-filter: blur("5px");
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: sticky;
+
   top: 0;
 }
 tbody {

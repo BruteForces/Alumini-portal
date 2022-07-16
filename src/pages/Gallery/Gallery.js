@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Gallery.module.css";
 const Gallery = () => {
   return (
@@ -7,40 +8,46 @@ const Gallery = () => {
       <div className={styles.gallery_container}>
         <div className={styles.gallery_items_container}>
           <div className={styles.gallery_item_container}>
-            <div className={styles.gallery_item}>
-              <div className={styles.itemImg}>
-                <img src="https://picsum.photos/id/1/200/300" alt="gallery" />
+            <Link to="alumni-meet">
+              <div className={styles.gallery_item}>
+                <div className={styles.itemImg}>
+                  <img src="https://source.unsplash.com/random/600x600" alt="gallery" />
+                </div>
+                <div className={styles.itemTitle}>
+                  <h2>ALUMNI <span>MEET</span></h2>
+                </div>
               </div>
-              <div className={styles.itemTitle}>
-                <h2>ALUMNI <span>MEET</span></h2>
-              </div>
-            </div>
+            </Link>
           </div>
           <div className={styles.gallery_item_container}>
-            <div className={styles.gallery_item}>
-              <div className={styles.itemTitle}>
-                <h2><span>ALL</span> PHOTOS</h2>
-              </div>
+            <Link to="all-photos">
+              <div className={styles.gallery_item}>
+                <div className={styles.itemTitle}>
+                  <h2><span>ALL</span> PHOTOS</h2>
+                </div>
 
-              <div className={styles.itemImg}>
-                <img src="https://picsum.photos/id/2/200/300" alt="gallery" />
+                <div className={styles.itemImg}>
+                  <img src="https://source.unsplash.com/random/400x400" alt="gallery" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className={styles.gallery_item_container}>
-            <div className={styles.gallery_item}>
-              <div className={styles.itemTitle}>
-                <h2><span>SEMINAR</span> SESSIONS</h2>
-              </div>
+            <Link to="seminar-sessions">
+              <div className={styles.gallery_item}>
+                <div className={styles.itemTitle}>
+                  <h2><span>SEMINAR</span> SESSIONS</h2>
+                </div>
 
-              <div className={styles.itemImg}>
-                <img src="https://picsum.photos/id/3/200/300" alt="gallery" />
+                <div className={styles.itemImg}>
+                  <img src="https://source.unsplash.com/random/500x500" alt="gallery" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

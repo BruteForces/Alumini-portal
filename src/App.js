@@ -10,6 +10,9 @@ import {
   OfficeBearers,
   Events,
   GalleryPage,
+  AlumniMeet,
+  AllPhotos,
+  SeminarSessions,
   RegistrationPage,
   ForgotPassword,
 } from "pages";
@@ -30,6 +33,9 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/gallery/alumni-meet" element={<AlumniMeet />} />
+            <Route path="/gallery/all-photos" element={<AllPhotos />} />
+            <Route path="/gallery/seminar-sessions" element={<SeminarSessions />} />
             <Route path="/office-bearers" element={<OfficeBearers />} />
           </Route>
         </Routes>
